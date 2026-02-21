@@ -1,5 +1,9 @@
 # KyuKurarin PCRE : KyuKurarin Bootstrap구현시, 컴파일러 재작용.
 
+perl호환 regex를 CytarrBytes<L>로 구현한다면 역.대.급. 초고속일거라고 생각했다.
+
+## bytes(b-string) • string in KyuKyrarin
+
  + SlicibleTarr<T, L>은 x.slice(size_t start = 0, size_t end = x::length::value, size_t step = 1)로, x.slice(k), x.slice(0, k), x.slice(0, x::length::value, k)가 정의되어있어서, x.slice(size_t start = 0, size_t end = x::length::value, size_t step = 1)를 y = x.slice(start, end); y.slice(0, y::length::value, step)으로, x.slice(start, end)를 x.slice(0, end).slice(start)로 취급한다.
  + 또한, SlicibleTarr<T, L>은 벡터로 변환 가능하며, SlicibleTarr<T, L> x, SlicibleTarr<T, N> y에 대해, x + y로 concat이 정의된다.
 
@@ -9,8 +13,6 @@
 SlicibleTarr<T*, L>*을 mutable마냥 append나 extend를 해당 포인터의 concat값으로의 치환으로 대체하는 wrapper 객체을 CytarrList<T, L>(cython에서 T를 object로 명시시  T = PyObject)이라 하고(단. SafeCytarrList<T, L>은 SlicibleTarr<T, L>를 new로 할당해놓고, 그 객체는 new에 의한 포인터이므로, 객체 변수들을 mutable마냥 append나 extend를 concat값으로 연산한 결과로, 객체 변수를 업데이트하고, 이전 값이었던 포인터를 지우는 방식으로 작동하는 안전한 리스트. 안전한 이유는, T*의 관리가 아니라서, T*에 간접적으로 접근하면서 Free하지 않아서 안전한게 첫번째, 두번째로, 배열의 각 인덱스가 포인터처럼 다뤄지지 않아서, python list특유의 side-effect를 없엘수 있음)
  + CytarrTuple<char, L>를 bytesarray처럼 관리하는 wrapper 객체를 CytarrBytesArray<L>라 하고 (크으~ char이라 편하다.)
  1 CytarrBytesArray<L>를 bytes처럼 관리하는 wrapper객체를 CytarrBytes<L>라 하겠다. (크으~ 이것도 char이라 편하다.)
-
-perl호환 regex를 CytarrBytes<L>로 구현한다면 역.대.급. 초고속일거다.
 
 요약 : Cytarr은 기본 Collection이 str제외하고 고속화되어있고, pxd로 불러올때, cythonic하게 정적 타입도 가능하며, 무엇보다, bloom-filter나 union-find구현이 용이하며, 해시 맵도 만들기 용이하다. 자료구조 구현이나, perl호환 regex를 cython으로 AOT컴파일하는것도 나쁘지 않겠다.
 
@@ -31,4 +33,4 @@ CytarrBytes를 잘 생각해보면, pcre에 비트레벨 조작기능과 `x ~= s
 
 Note : [Implementation by bootstrapping Kyukyrarin](./Implementation)
 
-⚠️ 이 문서에서 가장 중요 : CyTarr은 Cython을 쓰지 않음. python.h를 따로 include해야만 PyObject사용 가능. 즉, 순수 KyuKurarin이고, Cython과 동형이라 CyTarr라고 불릴 뿐. ⚠️
+N.B. CyTarr은 Cython을 쓰지 않음. python.h를 따로 include해야만 PyObject사용 가능. 즉, 순수 KyuKurarin이고, Cython과 동형이라 CyTarr라고 불릴 뿐.
