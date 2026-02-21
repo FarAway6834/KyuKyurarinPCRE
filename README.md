@@ -39,4 +39,4 @@ N.B. CyTarr은 Cython을 쓰지 않음. python.h를 따로 include해야만 PyOb
 
 사실 KyuKyurarin PCRE는, 다음 EVA계획의 수정판이다.
 
-[EVA계획](./CancledPlan/EVA.md)
+[EVA계획](./CancledPlan/EVA)
