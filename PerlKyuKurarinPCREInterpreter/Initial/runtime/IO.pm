@@ -6,6 +6,8 @@ use Exporter 'import';
 
 our @EXPORT = qw(io);
 
-/* not implmented in this version */
+sub io;
+
+/* fileIO not implmented in this version */
 
 1;
