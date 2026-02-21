@@ -29,6 +29,6 @@ CytarrBytes를 잘 생각해보면, pcre에 비트레벨 조작기능과 `x ~= s
  > 4. KyuKurarin을 프로그래밍 언어로 사용
  > 5. 무슨 미친놈의 PCRE 언어가, **서브루틴•제귀가 있고, 분기가 있는** PCRE특성상, 튜링 완전하다.
 
-Note : [Implementation by bootstrapping Kyukyrarin](./Implemetation)
+Note : [Implementation by bootstrapping Kyukyrarin](./Implementation)
 
 ⚠️ 이 문서에서 가장 중요 : CyTarr은 Cython을 쓰지 않음. python.h를 따로 include해야만 PyObject사용 가능. 즉, 순수 KyuKurarin이고, Cython과 동형이라 CyTarr라고 불릴 뿐. ⚠️
