@@ -22,7 +22,7 @@ CytarrBytes를 잘 생각해보면, pcre에 비트레벨 조작기능과 `x ~= s
  >
  > KyuKurarin PCRE를 다음과 같이 정의함.
  > 
- > + EBNF를 CytarrBytes기반 bitwise조작 •bloom filter•uniom-find를 곁들인 PCRE에 서브루틴 매치패턴으로 컴파일(EBNF비터미널 문자열이 PCRE페턴을 DEFINE한 서브루틴으로 컴파일됨)하는 방식으로 구현하면 으흐흐... 심지어는 EBNF 에러까지도 전•후방 긍정 탐색 등에 걸리면, 플래그 패턴을 정의시키는 식으로 구현 가능하다. 요컨데, ["KyuKurarin PCRE"라는 `\{ebnf}`라는 이스케이프로, EBNF코드를 PCRE서브루틴으로 만드는 "언어" 다.](./KyuKyurarinPCREBNF)
+ > + EBNF를 CytarrBytes기반 bitwise조작 •bloom filter•uniom-find를 곁들인 PCRE에 서브루틴 매치패턴으로 컴파일(EBNF비터미널 문자열이 PCRE페턴을 DEFINE한 서브루틴으로 컴파일됨)하는 방식으로 구현하면 으흐흐... 심지어는 EBNF 에러까지도 전•후방 긍정 탐색 등에 걸리면, 플래그 패턴을 정의시키는 식으로 구현 가능하다. 요컨데, ["KyuKurarin PCREBNF"라는 `\{ebnf}`라는 이스케이프로, EBNF코드를 PCRE서브루틴으로 만드는 "언어" 다.](./KyuKyurarinPCREBNF)
  > + 그리고, PCRE substituate • pettern자체를 하나의 서브루틴으로 취급하여, ${서브루틴명}으로 실행까지 가능하다면 금☆상☆첨☆화.
  > + IO<typename T, iob G> io에 대해, G io[T channel]로 두고, G ob에 대해, CytarrBytes<L> 타입의 ob.input<L>() 및, output<L>(CytarrBytes<L> data); 인 IO객체를 입출력 함수로 가상화해서,  > + `#pragma IO<filename.h>(io)`라고 작성하고, filename.h라는 KyuKurarin에서 이를 지정해주면,
  > 1. 평범하게 C의 stdio/stderror/program parameter • exit/pipe massage • process massage • syscall 및 Aduino와의 I/O연동용으로 구현 가능
