@@ -9,3 +9,5 @@
     + ob.output<L>(CytarrBytes<L> data)
 
 인 IO객체를 입출력 함수로 가상화할 생각이라고 했었다.
+
+...작성중...
