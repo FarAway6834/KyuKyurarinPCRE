@@ -40,4 +40,4 @@ N.B. CyTarr은 Cython을 쓰지 않음. python.h를 따로 include해야만 PyOb
 사실 KyuKyurarin PCRE는, 다음 EVA계획의 수정판이다.
 
 [EVA계획](./CancledPlan/EVA)
-그리고 EVA계획도, [PCREW](https://github.com/FarAway6834/PCREW)와 [Pepe](./CancledPlan/Pepe)의 수정이다
+그리고 EVA계획도, 「[PCREW](https://github.com/FarAway6834/PCREW) (docs on [PcrewImplementation directory](https://github.com/FarAway6834/PCREW/blob/main/PcrewImplementation%2FREADME.md)」와 [Pepe](./CancledPlan/Pepe)의 수정이다
